@@ -1,0 +1,20 @@
+
+
+<div class="right">
+
+    <h3 style="margin-left: 2em;">Books</h3>
+    <ul>
+      <li *ngFor="let book of books | async" style="display: flex; width: 100%; margin-bottom: 5px;">
+        <span style="width: 50%;">
+        <span > Title: {{ book.title }}</span>, Author: <span style="width: 50%;">{{ book.author }}</span>
+      </span>
+         <button (click)="deleteBook(book)">Delete</button> 
+        <button (click)="selectBook(book)">Select</button>
+      </li>
+    </ul>
+  <div *ngIf="selectedBook">
+    <input type="text" [(ngModel)]="selectedBook.title" />
+    <input type="text" [(ngModel)]="selectedBook.author" />
+    <button (click)="updateBook()">Update</button>
+  </div>
+</div>
