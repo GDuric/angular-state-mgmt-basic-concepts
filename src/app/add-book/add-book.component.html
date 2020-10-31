@@ -1,7 +1,14 @@
 <div class="left">
-
-    <input type="text" placeholder="Book title" [(ngModel)]="bookTitle">
-    <input type="text" placeholder="Book author" [(ngModel)]="bookAuthor">
+  <mat-form-field class="example-full-width input-class">
+    <mat-label>Book Title</mat-label>
+    <input matInput [(ngModel)]="bookTitle">
+  </mat-form-field>
+  <mat-form-field class="example-full-width  input-class">
+    <mat-label>Book Author</mat-label>
+    <input matInput [(ngModel)]="bookAuthor">
+  </mat-form-field>
   
-    <button (click)="addBook()">Add a Book</button>
+  <div class="button-row">
+    <button mat-button (click)="addBook()">Add a Book</button>
+  </div>
   </div>

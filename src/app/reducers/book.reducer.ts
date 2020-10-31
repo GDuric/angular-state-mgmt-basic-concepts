@@ -15,7 +15,7 @@ export function bookReducer(state = [], action: BookActions.Actions) {
         case BookActions.ADD_BOOK:
             return [ ...state, {...action.payload }];
         case BookActions.REMOVE_BOOK:                  
-            const filteredState = state.filter(x => x.id !== action.payload.id);    
+            const filteredState = state.filter(x => x.id !== action.payload.id);            
            return  filteredState;
         case BookActions.UPDATE_BOOK:                  
            let updatedBook = state.filter(x => x.id === action.payload.id);

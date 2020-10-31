@@ -1,6 +1,7 @@
 import { Book } from './models/book.model';
-import { BooksState } from './reducers/book.reducer';
+import { Author } from './models/author.model';
 
 export interface AppState {
- books: Book[]
+ books: Book[],
+ authors: Author[]
 }

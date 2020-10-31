@@ -1,0 +1,13 @@
+
+
+<div class="right">
+
+    <ul>
+      <li *ngFor="let author of authors | async " style="display: flex; width: 100%; margin-bottom: 5px;">
+        <span style="width: 50%;">
+        <span > {{ author.name }}</span> <span > ({{ author.numberOfBooks }})</span>
+      </span>
+        
+      </li>
+    </ul>
+</div>

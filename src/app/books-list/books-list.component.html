@@ -1,20 +1,31 @@
 
 
-<div class="right">
+<div class="right" >
+    <mat-card   *ngFor="let book of books | async">
+      <div class="book-info">
+        <mat-card-title> {{book.title}} </mat-card-title>,
+        <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+      </div>
+      
+      <mat-card-actions class="book-actions">
+        <button (click)="deleteBook(book)" mat-button>DELETE</button>
+        <button (click)="selectBook(book)" mat-button>SELECT</button>
+      </mat-card-actions>
+    </mat-card>
 
-    <h3 style="margin-left: 2em;">Books</h3>
-    <ul>
-      <li *ngFor="let book of books | async" style="display: flex; width: 100%; margin-bottom: 5px;">
-        <span style="width: 50%;">
-        <span > Title: {{ book.title }}</span>, Author: <span style="width: 50%;">{{ book.author }}</span>
-      </span>
-         <button (click)="deleteBook(book)">Delete</button> 
-        <button (click)="selectBook(book)">Select</button>
-      </li>
-    </ul>
-  <div *ngIf="selectedBook">
-    <input type="text" [(ngModel)]="selectedBook.title" />
-    <input type="text" [(ngModel)]="selectedBook.author" />
-    <button (click)="updateBook()">Update</button>
-  </div>
+  <mat-card *ngIf="selectedBook">
+    <mat-form-field class="example-full-width input-class">
+      <mat-label>Book Title</mat-label>
+      <input matInput [(ngModel)]="selectedBook.title">
+    </mat-form-field>
+    <mat-form-field class="example-full-width  input-class">
+      <mat-label>Book Author</mat-label>
+      <input matInput [(ngModel)]="selectedBook.author">
+    </mat-form-field>
+
+    <div class="button-row">
+      <button mat-button (click)="updateBook()">Update the Book</button>
+    </div>
+  </mat-card>
+
 </div>

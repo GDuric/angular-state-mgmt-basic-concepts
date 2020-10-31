@@ -1,0 +1,9 @@
+.input-class {
+    border: 1px lightgrey dashed;
+    margin-bottom: 5px;
+    width: 80%;
+}
+.button-row {
+    display: table-cell;
+    width: 490px;
+  }
